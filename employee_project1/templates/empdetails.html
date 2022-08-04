@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h3 class="mt-5">EMPLOYEE DETAILS : </h3>
+
+<div class="col md 8">
+    <table class="table table-success table-striped" >
+        <thead>
+        <tr>
+
+            <th>Employee name </th>
+            <th>Contact </th>
+            <th>Department</th>
+        </tr>
+       </thead>
+       {% for a in data %}
+       <tr>
+        <td>{{a.empname}}</td>
+        <td>{{a.empcontact}}</td>
+        <td>{{a.deptemail}}</td>
+       </tr>
+       {% endfor %}
+      
+    </table>
+
+</div>
+<div class="d-grid gap-3">
+    <a href="{% url 'addemp' %}"><button class="btn btn-danger" type="button">Add Employee</button></a>
+  
+  </div>
+
+
+
+{% endblock content %}
